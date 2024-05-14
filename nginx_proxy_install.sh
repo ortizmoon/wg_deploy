@@ -47,4 +47,14 @@ EOF
 # Deployment
 docker-compose up -d
 
+# Clean
+rm -r docker-compose*
+history -c
+
+### ATTENTION
+echo "Default data for npm:"
+echo "Email:    admin@example.com"
+echo "Password: changeme"
+echo "MAKE SURE TO REPLACE THEM WITH YOURS"
+
 ######

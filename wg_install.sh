@@ -5,7 +5,7 @@
 # Data input
 read -p "Enter the public IP address of the server where this script is running: " wg_host_value
 read -p "Select the language for the future WireGuard admin panel (supported values like ru, en, de, etc.): " wg_lang_value
-read -p "Enter the password for the future WireGuard admin panel: " wg_pass_value
+read -p "Enter the password for the future WireGuard admin panel (WARNING! Save this pass!): " wg_pass_value
 cat <<EOF > docker-compose.yaml
 version: "3.8"
 volumes:
@@ -36,4 +36,7 @@ EOF
 # Deployment
 docker-compose up -d
 
+# Clean
+rm -r docker-compose*
+history -c
 ######
